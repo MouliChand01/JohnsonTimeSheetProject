@@ -10,21 +10,21 @@
                     <div>
                         <div>
                             <label for="first-name"> Employee Name: </label><br>
-                            <input id="first-name" type="text" formControlName="EmployeeName" class="form-control"
+                            <input id="first-name" type="text" formControlName="empName" class="form-control"
                                 placeholder="employeeName"> <br>
                             <span
-                                *ngIf="loginform.get('EmployeeName')?.errors && loginform.get('EmployeeName')?.touched "
+                                *ngIf="loginform.get('empName')?.errors && loginform.get('empName')?.touched "
                                 id="demo"><p>*Name Required</p></span>
                             <!-- <span *ngIf="loginform.get('Name')?.errors?.maxlength" >*name should be maximum 10</span> -->
                         </div>
-                        <div>
+                        <!-- <div>
                             <label for="employeeid">Employee Id: </label><br>
                             <input id="employeeid" type="text" formControlName="employeeid" class="form-control"
                                 placeholder="employeeid"> <br>
                             <span *ngIf="loginform.get('employeeid')?.errors && loginform.get('employeeid')?.touched "
                                 id="demo"><p>*EmployeeId is Required</p></span>
-                            <!-- <span *ngIf="loginform.get('password')?.errors?.minlength" >*password should be minimum 4</span> -->
-                        </div>
+                            <span *ngIf="loginform.get('password')?.errors?.minlength" >*password should be minimum 4</span>
+                        </div> -->
                         <div>
                             <label for="ClientName">ClientName </label><br>
                             <input id="ClientName" type="text" formControlName="clientName" class="form-control"
@@ -36,25 +36,26 @@
                         <div>
                             <label for="Startdate">Timesheet Startdate </label><br>
                             <input id="Startdate" type="date" formControlName="startDate" class="form-control"
-                                class="form-control" placeholder="yyyy-dd-mm"> <br>
+                                class="form-control" placeholder="yyyy-dd-mm" [max]="getToday()"> <br>
                             <span *ngIf="loginform.get('startDate')?.errors && loginform.get('startDate')?.touched "
                                 id="demo"><p>*Startdate is Required</p></span>
                             <!-- <span *ngIf="loginform.get('password')?.errors?.minlength" >*password should be minimum 4</span> -->
                         </div>
                         <div>
                             <label for="endDate">Timesheet Enddate</label><br>
-                            <input id="endDate" type="date" formControlName="endDate" class="form-control"  placeholder="yyyy-dd-mm"> <br>
+                            <input id="endDate" type="date" formControlName="endDate" class="form-control"  placeholder="yyyy-dd-mm" [max]="getToday()"> <br>
                             <span *ngIf="loginform.get('endDate')?.errors && loginform.get('endDate')?.touched "
                                 id="demo"><p>*EndDate is Required</p></span>
                             <!-- <span *ngIf="loginform.get('password')?.errors?.minlength" >*password should be minimum 4</span> -->
                         </div>
                         <div>
                             <label for="FileName">UploadFile</label><br>
-                            <input id="FileName" type="file" formControlName="FileName" class="form-control"
-                                style="padding-top: 3px;" multiple accept=".jpeg,xlsx"> <br>
-                            <span *ngIf="loginform.get('FileName')?.errors && loginform.get('FileName')?.touched "
-                                id="demo"><p>*Png,xlsx,jpeg Files are Required</p></span>
+                            <input id="FileName" type="file" formControlName="fileName" class="form-control"
+                                style="padding-top: 3px;"  (change)="onImageChangeFromFile($event)"> <br>
+                            <span *ngIf="loginform.get('fileName')?.errors && loginform.get('fileName')?.touched "
+                                id="demo"><p>{{errorMessgae}}</p></span>
                             <!-- <span *ngIf="loginform.get('password')?.errors?.minlength" >*password should be minimum 4</span> -->
+                            
                         </div>
                         <div>
                             <button style="margin-left: 40%;" (click)="submited()" [disabled]="!loginform.valid" >Submit</button>
