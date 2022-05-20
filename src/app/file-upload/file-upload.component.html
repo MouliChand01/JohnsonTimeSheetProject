@@ -48,10 +48,10 @@
                                 id="demo"><p>*EndDate is Required</p></span>
                             <!-- <span *ngIf="loginform.get('password')?.errors?.minlength" >*password should be minimum 4</span> -->
                         </div>
-                        <div>
+                        <div formGroupName="fileupload">
                             <label for="FileName">UploadFile</label><br>
                             <input id="FileName" type="file" formControlName="fileName" class="form-control"
-                                style="padding-top: 3px;"  (change)="onImageChangeFromFile($event)"> <br>
+                                style="padding-top: 3px;"  (change)="onImageChangeFromFile($event)" multiple> <br>
                             <span *ngIf="loginform.get('fileName')?.errors && loginform.get('fileName')?.touched "
                                 id="demo"><p>{{errorMessgae}}</p></span>
                             <!-- <span *ngIf="loginform.get('password')?.errors?.minlength" >*password should be minimum 4</span> -->

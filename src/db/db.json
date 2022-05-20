@@ -1,0 +1,54 @@
+{
+  "NewUser": [
+    {
+      "id": 1,
+      "empName": "Mouli Ramadasu",
+      "empid": "21312",
+      "role": "senior ui developer",
+      "batch": "olic-600",
+      "password": "12345678"
+    },
+    {
+      "id": 2,
+      "empName": "Sivakumar vamana",
+      "empid": "21322",
+      "role": "senior ui developer",
+      "batch": "olic-600",
+      "password": "12345678"
+    },
+    {
+      "empName": "SaiKrishna",
+      "email": "sskrishna@gmail.com",
+      "empid": "21310",
+      "role": "Senior Developer",
+      "batch": "OLIC-600",
+      "password": "12345678",
+      "id": 3
+    }
+  ],
+  "Admin": [
+    {
+      "id": 1,
+      "empid": "1234",
+      "Name": "Jhonson",
+      "password": "Admin@Ojas"
+    },
+    {
+      "id": 2,
+      "empid": "12345",
+      "Name": "Narendra",
+      "password": "Admin@Ojas"
+    }
+  ],
+  "clentSheetUpload": [
+    {
+      "id": 1,
+      "empName": "mouli",
+      "clientName": "neebal",
+      "startDate": "2022-05-26",
+      "endDate": "2022-05-25",
+      "fileName": "C:\\fakepath\\cucumber.webp"
+    }
+    
+  ]
+}

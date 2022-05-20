@@ -9,13 +9,19 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OjasSerService } from './ojas-ser.service';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AdminpageComponent } from './adminpage/adminpage.component';
+import { DataTablesModule } from "angular-datatables";
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
     NewuserComponent,
-    FileUploadComponent
+    FileUploadComponent,
+    DashboardComponent,
+    AdminpageComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    DataTablesModule,
+
     
   ],
   providers: [OjasSerService],

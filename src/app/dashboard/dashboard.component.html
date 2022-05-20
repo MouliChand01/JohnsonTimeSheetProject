@@ -1,0 +1,46 @@
+<div class="dashboard">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand"><img src="assets/OJAS.PNG"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item ">
+                    <a class="nav-link" (click)="timesheetUpload()">EmployeeFileUpload</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="adminLogin()">AdminLogin</a>
+                </li>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item ">
+                    <a class="nav-link" (click)="gotoLogin()">EmployeeLogout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="adminlogin">
+        <div class="card" *ngIf="admincard">
+            <div class="card-header" style="text-align:center;">
+                <h1>ADMIN LOGIN DETAILS</h1>
+            </div>
+            <div class="card-body">
+                <input type="tel" id="adminid" placeholder="ENTER ADMIN KEY" class="form-control" [(ngModel)]="adminId"><br>
+                <input *ngIf="email" type="email" id="email" placeholder="ENTER EMAILID" class="form-control"><br>
+                <input *ngIf="password" type="password" id="pass" placeholder="ENTER PINNUMBER" class="form-control" [(ngModel)]="pin"><br>
+                <div class="card-btn">
+                    <button *ngIf="btn1" class="btn btn-primary" (click)="getadminData()">Fatching Admin Data</button>
+                    <button *ngIf="btn2" class="btn btn-primary" (click)="gotoadmin()">Admin Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="uploadTimesheet">
+        <app-file-upload></app-file-upload>
+    </div>
+</div>

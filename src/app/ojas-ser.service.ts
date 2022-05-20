@@ -6,12 +6,36 @@ import { Injectable } from '@angular/core';
 })
 export class OjasSerService {
 
-  fileupload_url="http://localhost:9090/uploadFile";
-  timesheet_url="http://localhost:9090/addTimeSheet"
+ 
+  NewUserurl="http://localhost:3000/NewUser";
+  upLoadFileurl="http://localhost:3000/clentSheetUpload";
+  adminurl="http://localhost:3000/Admin";
+
 
   constructor(private http:HttpClient) { }
 
-  fileUpload(data:any){
-    return this.http.post(this.fileupload_url,data)
+  getUserData(){
+    return this.http.get(this.NewUserurl)
   }
+
+  getAdminData(){
+    return this.http.get(this.adminurl)
+  }
+
+  getTimeSheets(){
+    return this.http.get(this.upLoadFileurl)
+  }
+  
+  // --------------POSTData----------------//
+
+  postfileUpload(data:any){
+    return this.http.post(this.upLoadFileurl,data)
+  }
+
+  postNewUser(data:any){
+    return this.http.post(this.NewUserurl,data)
+  }
+
+ 
+ 
 }

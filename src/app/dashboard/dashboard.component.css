@@ -1,0 +1,19 @@
+li a:hover{
+    color: rgba(0, 0, 0, 0.13);
+}
+.card{
+    width: 50%;
+    position: relative;
+    left: 350px;
+    top:100px
+}
+.card-btn{
+    display: flex;
+    justify-content: center;
+}
+.dashboard{
+    background-image: url('../../assets/bg3.jpg');
+    background-size: 100%;
+    background-size: cover;
+    height: 800px;
+}

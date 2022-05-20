@@ -16,7 +16,7 @@ export class NewuserComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerForm = this.formBilder.group({
-      name: new FormControl('', Validators.required),
+      empName: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')]),
       empid: new FormControl('', Validators.required),
       role: new FormControl('', Validators.required),
@@ -26,7 +26,10 @@ export class NewuserComponent implements OnInit {
   }
 
   newData(){
-    console.log(`${this.registerForm.value.name} done your registration..`)
+    alert(`${this.registerForm.value. empName} done your registration..`);
+    this.ser.postNewUser(this.registerForm.value).subscribe();
+    console.log(this.registerForm.value)
+    this.router.navigate(['Login'])
   }
 }
  
